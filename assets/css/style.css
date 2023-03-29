@@ -3,15 +3,14 @@
 
 /*=============== VARIABLES CSS ===============*/
 :root {
-  --header-height: 3.5rem;
-
-  /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
-  --first-color: hsl(220, 68%, 54%);
-  --first-color-lighten: hsl(220, 68%, 97%);
-  --title-color: hsl(220, 48%, 28%);
-  --text-color: hsl(220, 12%, 45%);
+  --header-height: 3.5rem;  
+  
   --body-color: hsl(220, 100%, 99%);
+--first-color: hsl(220, 68%, 54%);
+--first-color-lighten: hsl(220, 68%, 97%);
+--title-color: hsl(220, 48%, 28%);
+--text-color: hsl(220, 12%, 45%);
+--box-shadows: hsla(220, 68%, 12%, 0.1);
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -27,6 +26,30 @@
   /*========== z index ==========*/
   --z-tooltip: 10;
   --z-fixed: 100;
+}
+
+/*===============DARK MODE ===============*/
+
+.dark-mode {
+--body-color: hsl(0, 0%, 10%);
+--first-color: hsl(0, 0%, 90%);
+--first-color-lighten: hsl(0, 0%, 12%);
+--title-color: hsl(0, 0%, 100%);
+--text-color: hsl(0, 0%, 70%);
+--box-shadows: hsla(40, 68%, 88%, 0.1);
+
+}
+/*===============DARK MODE ===============*/
+
+.flag {
+  border-radius: 4px;
+  margin: 22px 6px 1px;
+  top: 50%;
+  left: 50%;
+  transform: translate(69%, -42%);
+
+
+  cursor: pointer;
 }
 
 /*========== Responsive typography==========*/
@@ -65,13 +88,17 @@ a {
   margin-inline: 1.5rem;
 }
 
+.inline-block{
+  display: inline-block!important;
+}
 /*=============== HEADER ===============*/
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  box-shadow: 0 2px 8px hsla(220, 68%, 12%, 0.1);
+  box-shadow: 0 2px 8px var(--box-shadows); 
+
   background-color: var(--body-color);
   z-index: var(--z-fixed);
 }
@@ -79,6 +106,7 @@ a {
 /*=============== NAV ===============*/
 .nav {
   height: var(--header-height);
+  padding: 20px
 }
 
 .nav__data {
@@ -129,7 +157,20 @@ a {
 }
 
 /* Navigation for mobile devices */
+
+
 @media screen and (max-width: 900px) {
+
+  .flag {
+    border-radius: 4px;
+    margin: 22px 6px 1px;
+    top: 50%;
+    left: 50%;
+    transform: translate(69%, -42%);
+    max-width: 30px;
+    height: 20px;
+    cursor: pointer;
+  }
   .nav__menu {
     background-color: var(--body-color);
     position: absolute;
@@ -266,33 +307,10 @@ a {
 
 
 
-/*===============DARK MODE ===============*/
-
-.dark-mode {
---body-color: hsl(0, 0%, 10%);
---first-color: hsl(0, 0%, 90%);
---first-color-lighten: hsl(0, 0%, 80%);
---title-color: hsl(0, 0%, 100%);
---text-color: hsl(0, 0%, 70%);
-}
-
-/*===============LIGHT MODE ===============*/
-
-.light-mode {
---body-color: hsl(220, 100%, 99%);
---first-color: hsl(220, 68%, 54%);
---first-color-lighten: hsl(220, 68%, 97%);
---title-color: hsl(220, 48%, 28%);
---text-color: hsl(220, 12%, 45%);
-}
-
-
-
-
 
 
   .main-content {
-    padding-top: 5rem; 
+    padding-top: 6.5rem; 
   } 
 
 /*=============== BREAKPOINTS ===============*/
@@ -347,7 +365,7 @@ a {
     right: 0;
     top: 6.5rem;
     background-color: var(--body-color);
-    box-shadow: 0 6px 8px hsla(220, 68%, 12%, 0.05);
+    box-shadow: 0 6px 8px var(--box-shadows);
     pointer-events: none;
     opacity: 0;
     transition: top 0.4s, opacity 0.3s;
@@ -423,5 +441,4 @@ a {
 @media screen and (min-width: 1152px) {
 
 }
-
 

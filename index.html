@@ -21,7 +21,8 @@
         <nav class="nav container">
             <div class="nav__data">
                 <a href="#" class="nav__logo">
-                    <i class="ri-code-s-slash-line"></i> Super Industries
+
+                    <i class="ri-code-s-slash-line light-mode"></i> Super Industries
                 </a>
 
                 <div class="nav__toggle" id="nav-toggle">
@@ -36,7 +37,14 @@
                 <ul class="nav__list">
 
                     <li>    
-                        <a href="About" class="nav__link">About</a>
+                        <img class=" flag inline-block" alt="en flag" src="./assets/Images/us.png" draggable="false">
+
+                    </li>
+                    <li>    
+                        <a onclick="themeSwitch()" class="nav__link ri-sun-fill"id="theme-icon" ></a>
+                    </li>
+                    <li>    
+                      <a id="trial"href="About" class="nav__link">About</a>
                     </li>
 
                     <!--=============== DROPDOWN RESOURCES ===============-->
@@ -97,6 +105,9 @@
     <div class="main-content">
         <h1>Welcome to Super Industries!</h1>
         <p>We are a leading company in the field of technology and innovation. Our goal is to create cutting-edge products that meet the needs of our customers and exceed their expectations. Contact us to learn more about our services.</p>
+      
+      
+
     </div>
 
     <!--=============== MAIN JS ===============-->
