@@ -43,11 +43,14 @@
 
 .flag {
   border-radius: 4px;
-  margin: 22px 6px 1px;
-  top: 50%;
+  margin: 22px 7px 0px;
+/*  top: 50%;
   left: 50%;
-  transform: translate(69%, -42%);
+transform: translate(69%, -42%);*/  
+position: relative;
+top: -9px;
 
+  justify-content: space-between;
 
   cursor: pointer;
 }
@@ -165,7 +168,6 @@ a {
     border-radius: 4px;
     margin: 22px 6px 1px;
     top: 50%;
-    left: 50%;
     transform: translate(69%, -42%);
     max-width: 30px;
     height: 20px;
@@ -203,6 +205,7 @@ a {
   justify-content: space-between;
   align-items: center;
   transition: background-color 0.3s;
+  cursor: pointer;
 }
 
 .nav__link:hover {
