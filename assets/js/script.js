@@ -97,7 +97,6 @@ function themeSwitch() {
  
 }
 const currentTheme = localStorage.getItem("theme");
-console.log(currentTheme);
 if (currentTheme == "dark") {
    element.classList.toggle("dark-mode");
    themeIcon.classList.add("ri-moon-fill");
@@ -110,17 +109,71 @@ if (currentTheme == "dark") {
 
 
 
-function changeLang() {
-    if (document.getElementById("imgClickAndChange").src == "http://www.userinterfaceicons.com/80x80/minimize.png"){
-        document.getElementById("imgClickAndChange").src = "http://www.userinterfaceicons.com/80x80/maximize.png";
-    } else {
-        document.getElementById("imgClickAndChange").src = "http://www.userinterfaceicons.com/80x80/minimize.png";
-    }
+
+function langChange() {
+  var image = document.getElementById("imgClickAndChange");
+
+  if (image.src.endsWith("/assets/Images/us.png")) {
+    image.src = "./assets/Images/es.png";
+    changeLang('es');
+
+  } else if (image.src.endsWith("/assets/Images/es.png")) {
+    image.src = "./assets/Images/cn.png";
+    changeLang('zh');
+
+  } else {
+    image.src = "./assets/Images/us.png";
+    changeLang('en');
+
+  }
+
 }
+function changeLang(langKey) {
 
 
+  var langg = lang[langKey];
 
 
+  const elements = document.querySelectorAll('[data-lang]');
+  
+  elements.forEach((element) => {
+    const key = element.dataset.lang;
+    element.innerText = langg[key];
+  });
+}
+  
+const lang = {
+  en: {
+    welcome_message: 'Welcome to Super Industries!',
+    aboutTitle: 'About me',
+    aboutText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    contactTitle: 'Contact me',
+    contactNameLabel: 'Name',
+    contactEmailLabel: 'Email',
+    contactMessageLabel: 'Message',
+    contactSubmitButton: 'Submit',
+  },
+  es: {
+    welcome_message: '¡Bienvenidos a Super Industries!',
+    aboutTitle: 'Sobre mí',
+    aboutText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    contactTitle: 'Contáctame',
+    contactNameLabel: 'Nombre',
+    contactEmailLabel: 'Email',
+    contactMessageLabel: 'Mensaje',
+    contactSubmitButton: 'Enviar',
+  },
+  zh: {
+    welcome_message: '欢迎来到超级工业',
+    aboutTitle: '关于我',
+    aboutText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    contactTitle: '联系我',
+    contactNameLabel: '姓名',
+    contactEmailLabel: '电子邮件',
+    contactMessageLabel: '消息',
+    contactSubmitButton: '提交',
+  },
+};
 
 
 
@@ -135,7 +188,7 @@ const langZH = {
   'nav_toggle_close': '关闭',
   'nav_link_about': '关于',
   'nav_dropdown_resources': '资源',
-  'nav_dropdown_about_us': '关于我们',
+  'about_us': '关于我们',
   'nav_dropdown_support': '支持',
   'nav_dropdown_contact_us': '联系我们',
   'nav_dropdown_safety': '安全和质量',
@@ -147,12 +200,12 @@ const langZH = {
   'main_text': '我们是一家领先的技术和创新公司。我们的目标是创建尖端的产品，满足客户的需求并超越他们的期望。联系我们以了解更多关于我们的服务。'
 };
 
-const langzhES = {
-  "Welcome to Super Industries!": "¡Bienvenidos a Super Industries!",
+const langES = {
+  "welcome_message": "¡Bienvenidos a Super Industries!",
   "We are a leading company in the field of technology and innovation. Our goal is to create cutting-edge products that meet the needs of our customers and exceed their expectations. Contact us to learn more about our services.": "Somos una empresa líder en el campo de la tecnología y la innovación. Nuestro objetivo es crear productos de vanguardia que satisfagan las necesidades de nuestros clientes y superen sus expectativas. Contáctanos para obtener más información sobre nuestros servicios.",
   "About": "Sobre nosotros",
   "Resources": "Recursos",
-  "About us": "Sobre nosotros",
+  "about_us": "Sobre nosotros",
   "Support": "Soporte",
   "Contact us": "Contáctanos",
   "Safety and quality": "Seguridad y calidad",
@@ -161,31 +214,3 @@ const langzhES = {
 
 };
 
-function setLanguage() {
-
-
-  
-  localStorage.setItem('lang', lang);
-  updateLanguage();
-}
-
-function updateLanguage() {
-  const lang = localStorage.getItem('lang') || 'en';
-  const langFile = `./lang_${lang}.js`;
-  fetch(langFile)
-    .then(response => response.json())
-    .then(data => {
-      // Update Navbar
-      document.querySelector('.nav__logo').innerHTML = `<i class="ri-code-s-slash-line light-mode"></i> ${data['nav_logo']}`;
-      document.querySelector('.nav__toggle-menu').innerHTML = data['nav_toggle_menu'];
-      document.querySelector('.nav__toggle-close').innerHTML = data['nav_toggle_close'];
-      document.querySelector('#trial').innerHTML = data['nav_link_about'];
-      document.querySelector('.dropdown__button').innerHTML = `${data['nav_dropdown_resources']} <i class="ri-arrow-down-s-line dropdown__arrow"></i>`;
-      document.querySelector('.dropdown__title:nth-of-type(1)').innerHTML = data['nav_dropdown_about_us'];
-      document.querySelector('.dropdown__link:nth-of-type(1)').innerHTML = data['nav_dropdown_about_us'];
-      document.querySelector('.dropdown__link:nth-of-type(2)').innerHTML = data['nav_dropdown_support'];
-      document.querySelector('.dropdown__link:nth-of-type(3)').innerHTML = data['nav_dropdown_contact_us'];
-      document.querySelector('.dropdown__title:nth-of-type(2)').innerHTML = data['nav_dropdown_safety'];
-      document.querySelector('.dropdown__link:nth-of-type(4)').innerHTML = data['nav_dropdown_cookie'];
-      document.querySelector('.dropdown__link:nth-of-type(5)').innerHTML = data['nav_dropdown_privacy'];
-    })}

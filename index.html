@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/images/favicon.webp" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/images/es.png" type="image/x-icon">
 
     <!--=============== REMIXICONS ===============-->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
@@ -40,7 +40,7 @@
                         <a onclick="themeSwitch()" class="nav__link ri-sun-fill" id="theme-icon" ></a>
                     </li>
                     <li>    
-                        <img id="imgClickAndChange" onclick="changeLang()" class=" flag" alt="en flag" src="./assets/Images/us.png" draggable="false">
+                        <img id="imgClickAndChange" onclick="langChange()" class=" flag" alt="en flag" src="./assets/Images/us.png" draggable="false">
                     </li>
                     <li>    
                       <a id="trial"href="About" class="nav__link">About</a>
@@ -56,10 +56,10 @@
                             <div class="dropdown__content">
                                 <div class="dropdown__group">
                                     <div class="dropdown__icon">
-                                      ''  <i class="ri-community-line"></i>
+                                        <i class="ri-community-line"></i>
                                     </div>
 
-                                    <span class="dropdown__title">About us</span>
+                                    <span id="about_us" class="dropdown__title">About us</span>
 
                                     <ul class="dropdown__list">
                                         <li>
@@ -102,7 +102,7 @@
     </header>
 
     <div class="main-content">
-        <h1>Welcome to Super Industries!</h1>
+        <h1 data-lang="welcome_message">Welcome to Super Industries!</h1>
         <p>We are a leading company in the field of technology and innovation. Our goal is to create cutting-edge products that meet the needs of our customers and exceed their expectations. Contact us to learn more about our services.</p>
       
       
