@@ -43,14 +43,13 @@
 
 .flag {
   border-radius: 4px;
-  margin: 22px 7px 0px;
 /*  top: 50%;
   left: 50%;
 transform: translate(69%, -42%);*/  
 position: relative;
-top: -9px;
+top: -28px;
 
-  justify-content: space-between;
+    margin-top: 60px;
 
   cursor: pointer;
 }
@@ -91,9 +90,6 @@ a {
   margin-inline: 1.5rem;
 }
 
-.inline-block{
-  display: inline-block!important;
-}
 /*=============== HEADER ===============*/
 .header {
   position: fixed;
@@ -109,7 +105,6 @@ a {
 /*=============== NAV ===============*/
 .nav {
   height: var(--header-height);
-  padding: 20px
 }
 
 .nav__data {
@@ -444,4 +439,3 @@ a {
 @media screen and (min-width: 1152px) {
 
 }
-

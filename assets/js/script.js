@@ -36,7 +36,6 @@ dropdownItems.forEach((item) => {
   })
 })
 
-// 3. Create a function to display the dropdown
 const toggleItem = (item) => {
   // 3.1. Select each dropdown content
   const dropdownContainer = item.querySelector('.dropdown__container')
@@ -77,25 +76,57 @@ addEventListener('resize', removeStyle)
 
 /*=============== LIGHT AND DARK MODE ===============*/
 
-function themeSwitch() {
    var element = document.body;
+   const themeIcon = document.getElementById("theme-icon");
+
+function themeSwitch() {
    element.classList.toggle("dark-mode");
 
 
-        const themeIcon = document.getElementById("theme-icon");
-
-            if(themeIcon.classList.contains("ri-sun-fill")){
-                            themeIcon.classList.remove("ri-sun-fill")
-              themeIcon.classList.add("ri-moon-fill")
-            } else {
-              themeIcon.classList.add("ri-sun-fill")
-
-            }
   
+            if(themeIcon.classList.contains("ri-sun-fill")){
+                
+                themeIcon.classList.remove("ri-sun-fill")
+                localStorage.setItem("theme", "dark");
+                themeIcon.classList.add("ri-moon-fill")
+            } else {
+                
+                localStorage.setItem("theme", "light");
+                themeIcon.classList.add("ri-sun-fill")
+            }
+ 
+}
+const currentTheme = localStorage.getItem("theme");
+console.log(currentTheme);
+if (currentTheme == "dark") {
+   element.classList.toggle("dark-mode");
+   themeIcon.classList.add("ri-moon-fill");
+   themeIcon.classList.remove("ri-sun-fill");
+
 }
 
 
 /*=============== TRANSLATE ENGLISH AND SPANISH ===============*/
+
+
+
+function changeLang() {
+    if (document.getElementById("imgClickAndChange").src == "http://www.userinterfaceicons.com/80x80/minimize.png"){
+        document.getElementById("imgClickAndChange").src = "http://www.userinterfaceicons.com/80x80/maximize.png";
+    } else {
+        document.getElementById("imgClickAndChange").src = "http://www.userinterfaceicons.com/80x80/minimize.png";
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 const langZH = {
   // Navbar
