@@ -160,7 +160,7 @@ const lang = {
     nav_dropdown_option__cookie: 'Cookies Settings',
     nav_dropdown_option__privacy: 'Privacy Policy',  
     // Page
-    welcome_message: 'Welcome to Super Industries!',
+    welcome_message: 'Welcome to Super Industries!2',
 
   },
   es: {
