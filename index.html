@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/images/es.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/images/Icon.png" type="image/x-icon">
 
     <!--=============== REMIXICONS ===============-->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
@@ -22,7 +22,8 @@
             <div class="nav__data">
                 <a href="#" class="nav__logo">
 
-                    <i class="ri-code-s-slash-line"></i> Super Industries
+                    <i class="ri-code-s-slash-line"></i> 
+                    <p data-lang="nav_link_title">Super Industries</p>
                 </a>
 
                 <div class="nav__toggle" id="nav-toggle">
@@ -43,13 +44,13 @@
                         <img id="imgClickAndChange" onclick="langChange()" class=" flag" alt="en flag" src="./assets/Images/us.png" draggable="false">
                     </li>
                     <li>    
-                      <a id="trial"href="About" class="nav__link">About</a>
+                      <a data-lang="nav_link_about" href="About" class="nav__link">About</a>
                     </li>
 
                     <!--=============== DROPDOWN RESOURCES ===============-->
                     <li class="dropdown__item">
                         <div class="nav__link dropdown__button">
-                            Resources <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                            <p data-lang="nav_dropdown_resources">Resources</p> <i class="ri-arrow-down-s-line dropdown__arrow"></i>
                         </div>
 
                         <div class="dropdown__container">
@@ -59,19 +60,19 @@
                                         <i class="ri-community-line"></i>
                                     </div>
 
-                                    <span id="about_us" class="dropdown__title">About us</span>
+                                    <span data-lang="nav_dropdown_title__about_us" id="about_us" class="dropdown__title">About us</span>
 
                                     <ul class="dropdown__list">
                                         <li>
-                                            <a href="#" class="dropdown__link">About us</a>
+                                            <a data-lang="nav_dropdown_title__about_us" href="#" class="dropdown__link">About us</a>
                                         </li>
 
                                         <li>
-                                            <a href="#" class="dropdown__link">Support</a>
+                                            <a data-lang="nav_dropdown_option__support" href="#" class="dropdown__link">Support</a>
                                         </li>
 
                                         <li>
-                                            <a href="#" class="dropdown__link">Contact us</a>
+                                            <a data-lang="nav_dropdown_option__contact_us" href="#" class="dropdown__link">Contact us</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -81,15 +82,15 @@
                                         <i class="ri-shield-line"></i>
                                     </div>
 
-                                    <span class="dropdown__title">Safety and quality</span>
+                                    <span data-lang="nav_dropdown_title__safety" class="dropdown__title">Safety and quality</span>
 
                                     <ul class="dropdown__list">
                                         <li>
-                                            <a href="#" class="dropdown__link">Cookie settings</a>
+                                            <a data-lang="nav_dropdown_option__cookie" href="#" class="dropdown__link">Cookie settings</a>
                                         </li>
 
                                         <li>
-                                            <a href="#" class="dropdown__link">Privacy Policy</a>
+                                            <a data-lang="nav_dropdown_option__privacy" href="#" class="dropdown__link">Privacy Policy</a>
                                         </li>
                                     </ul>
                                 </div>

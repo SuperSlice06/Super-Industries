@@ -114,16 +114,20 @@ function langChange() {
   var image = document.getElementById("imgClickAndChange");
 
   if (image.src.endsWith("/assets/Images/us.png")) {
+    localStorage.setItem("lang", "spanish");
     image.src = "./assets/Images/es.png";
     changeLang('es');
 
   } else if (image.src.endsWith("/assets/Images/es.png")) {
+    localStorage.setItem("lang", "chinese");
     image.src = "./assets/Images/cn.png";
     changeLang('zh');
 
   } else {
+    localStorage.setItem("lang", "english");
     image.src = "./assets/Images/us.png";
     changeLang('en');
+    
 
   }
 
@@ -144,73 +148,66 @@ function changeLang(langKey) {
   
 const lang = {
   en: {
+    // Header
+    nav_link_title: 'Super Industries',
+    nav_link_about: 'About',
+    nav_dropdown_resources: 'Resources',
+    // Navbar
+    nav_dropdown_title__about_us: 'About Us',
+    nav_dropdown_option__support: 'Support',
+    nav_dropdown_option__contact_us: 'Contact Us',
+    nav_dropdown_title__safety: 'Safety and Quality',
+    nav_dropdown_option__cookie: 'Cookies Settings',
+    nav_dropdown_option__privacy: 'Privacy Policy',  
+    // Page
     welcome_message: 'Welcome to Super Industries!',
-    aboutTitle: 'About me',
-    aboutText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    contactTitle: 'Contact me',
-    contactNameLabel: 'Name',
-    contactEmailLabel: 'Email',
-    contactMessageLabel: 'Message',
-    contactSubmitButton: 'Submit',
+
   },
   es: {
-    welcome_message: '¡Bienvenidos a Super Industries!',
-    aboutTitle: 'Sobre mí',
-    aboutText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    contactTitle: 'Contáctame',
-    contactNameLabel: 'Nombre',
-    contactEmailLabel: 'Email',
-    contactMessageLabel: 'Mensaje',
-    contactSubmitButton: 'Enviar',
-  },
+    // Header
+    nav_link_title: 'Súper Industrias',
+    nav_link_about: 'Acerca de',
+    nav_dropdown_resources: 'Recursos',
+    // Navbar
+    nav_dropdown_title__about_us: 'Acerca de Nosotros',
+    nav_dropdown_option__support: 'Apoyo',
+    nav_dropdown_option__contact_us: 'Contáctanos',
+    nav_dropdown_title__safety: 'Seguridad y Calidad',
+    nav_dropdown_option__cookie: 'Configuración de Cookies',
+    nav_dropdown_option__privacy: 'Política de Privacidad',
+    // Page
+    welcome_message: 'Bienvenido a Súper Industrias!',
+    },
   zh: {
+    // Header
+    nav_link_title: '超级工业',
+    nav_link_about: '关于',
+    nav_dropdown_resources: '资源',
+    // Navbar
+    nav_dropdown_title__about_us: '关于我们',
+    nav_dropdown_option__support: '支持',
+    nav_dropdown_option__contact_us: '联系我们',
+    nav_dropdown_title__safety: '安全和质量',
+    nav_dropdown_option__cookie: 'Cookie设置',
+    nav_dropdown_option__privacy: '隐私政策',  
+    // Page
     welcome_message: '欢迎来到超级工业',
-    aboutTitle: '关于我',
-    aboutText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    contactTitle: '联系我',
-    contactNameLabel: '姓名',
-    contactEmailLabel: '电子邮件',
-    contactMessageLabel: '消息',
-    contactSubmitButton: '提交',
+
   },
 };
 
+const currentLang = localStorage.getItem("lang");
+var startupImage = document.getElementById("imgClickAndChange");
+
+if (currentLang == "spanish") {
+  startupImage.src = "./assets/Images/es.png";
+
+  changeLang('es');
 
 
+} if (currentLang == "chinese") {
+  startupImage.src = "./assets/Images/cn.png";
 
+  changeLang('zh');
 
-
-
-const langZH = {
-  // Navbar
-  'nav_logo': '超级工业',
-  'nav_toggle_menu': '菜单',
-  'nav_toggle_close': '关闭',
-  'nav_link_about': '关于',
-  'nav_dropdown_resources': '资源',
-  'about_us': '关于我们',
-  'nav_dropdown_support': '支持',
-  'nav_dropdown_contact_us': '联系我们',
-  'nav_dropdown_safety': '安全和质量',
-  'nav_dropdown_cookie': 'Cookie设置',
-  'nav_dropdown_privacy': '隐私政策',
-
-  // Main Content
-  'main_title': '欢迎来到超级工业！',
-  'main_text': '我们是一家领先的技术和创新公司。我们的目标是创建尖端的产品，满足客户的需求并超越他们的期望。联系我们以了解更多关于我们的服务。'
-};
-
-const langES = {
-  "welcome_message": "¡Bienvenidos a Super Industries!",
-  "We are a leading company in the field of technology and innovation. Our goal is to create cutting-edge products that meet the needs of our customers and exceed their expectations. Contact us to learn more about our services.": "Somos una empresa líder en el campo de la tecnología y la innovación. Nuestro objetivo es crear productos de vanguardia que satisfagan las necesidades de nuestros clientes y superen sus expectativas. Contáctanos para obtener más información sobre nuestros servicios.",
-  "About": "Sobre nosotros",
-  "Resources": "Recursos",
-  "about_us": "Sobre nosotros",
-  "Support": "Soporte",
-  "Contact us": "Contáctanos",
-  "Safety and quality": "Seguridad y calidad",
-  "Cookie settings": "Configuración de cookies",
-  "Privacy Policy": "Política de privacidad",
-
-};
-
+}
