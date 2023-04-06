@@ -2,19 +2,19 @@
 function langChange() {
     var image = document.getElementById("imgClickAndChange");
   
-    if (image.src.endsWith("/assets/Images/us.png")) {
+    if (image.src.endsWith("assets/Images/us.png")) {
       localStorage.setItem("lang", "spanish");
       image.src = "./assets/Images/es.png";
       changeLang('es');
   
-    } else if (image.src.endsWith("./assets/Images/es.png")) {
+    } else if (image.src.endsWith("assets/Images/es.png")) {
       localStorage.setItem("lang", "chinese");
       image.src = "./assets/Images/cn.png";
       changeLang('zh');
   
     } else {
       localStorage.setItem("lang", "english");
-      image.src = "./assets/Images/us.png";
+      image.src = "assets/Images/us.png";
       changeLang('en');
       
   
@@ -89,13 +89,13 @@ function langChange() {
   var startupImage = document.getElementById("imgClickAndChange");
   
   if (currentLang == "spanish") {
-    startupImage.src = "assets/Images/es.png";
+    startupImage.src = "/assets/Images/es.png";
   
     changeLang('es');
   
   
   } if (currentLang == "chinese") {
-    startupImage.src = "assets/Images/cn.png";
+    startupImage.src = "/assets/Images/cn.png";
   
     changeLang('zh');
   
