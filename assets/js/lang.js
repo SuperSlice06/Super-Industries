@@ -4,21 +4,22 @@ function langChange() {
   
     if (image.src.endsWith("assets/Images/us.png")) {
       localStorage.setItem("lang", "spanish");
-      image.src = "./assets/Images/es.png";
+      image.src = "/assets/Images/es.png";
       changeLang('es');
   
     } else if (image.src.endsWith("assets/Images/es.png")) {
       localStorage.setItem("lang", "chinese");
-      image.src = "./assets/Images/cn.png";
+      image.src = "/assets/Images/cn.png";
       changeLang('zh');
   
     } else {
       localStorage.setItem("lang", "english");
-      image.src = "assets/Images/us.png";
+      image.src = "/assets/Images/us.png";
       changeLang('en');
       
   
     }
+    //console.log(image.src)
   
   }
   function changeLang(langKey) {
