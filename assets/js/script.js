@@ -79,7 +79,7 @@ const showMenu = (toggleId, navId) => {
      var element = document.body;
      const themeIcon = document.getElementById("theme-icon");
   
-  function themeSwitch() {
+  function othemeSwitch() {
      element.classList.toggle("dark-mode");
   
   
@@ -106,4 +106,39 @@ const showMenu = (toggleId, navId) => {
   
   
   
+
+  
+// The main function that changes the image and the language
+function themeSwitch() {
+    // Get the image element
+    var element = document.body;
+    const themeIcon = document.getElementById("theme-icon");
+   
+    // Get the current language from local storage or set it to "english" by default
+    var currentLang = localStorage.getItem("theme") || "light";
+        
+    // Switch statement to change the image source and language based on the current language
+    switch (currentLang) {
+      case "dark":
+        // Set the new language to "spanish" in local storage
+        localStorage.setItem("theme", "dark");
+        element.classList.toggle("dark-mode");
+        themeIcon.classList.add("ri-moon-fill");
+        themeIcon.classList.remove("ri-sun-fill");
+   
+        break;
+      case "light":
+        // Set the new language to "chinese" in local storage
+        localStorage.setItem("theme", "light");
+        element.classList.toggle("dark-mode");
+        themeIcon.classList.add("ri-moon-fill");
+        themeIcon.classList.remove("ri-sun-fill");
+   
+        break;
+      default:
+        // Set the new language to "english" in local storage
+        localStorage.setItem("theme", "light");   
+        break;
+    }
+  }
   
